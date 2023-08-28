@@ -3,3 +3,10 @@
     <app-task [task]="task" [appColorByState]="task.etat"></app-task>
   </li>
 </ul>
+
+<ul>
+  <h2>Archivées</h2>
+  <li *ngFor="let task of archivedTaskList">
+    <app-task [task]="task"></app-task>
+  </li>
+</ul>
