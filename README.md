@@ -25,3 +25,36 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+# TP Jules Poissonnet
+
+Versions :
+
+- Node: 18.17.0
+- Npm: 9.6.7
+- Angular CLI: 16.2.0
+
+`npm install -g @angular/cli`
+
+`ng new task-manager`
+
+`cd task-manager`
+
+`ng build`
+
+Les fichiers dans le `dist` sont minifiés et bundlés.
+
+`npm i -g yarn`
+
+`yarn add --dev @compodoc/compodoc`
+
+`npm run compodoc:serve`
+
+- compodoc: 1.1.21
+- yarn: 4.0.0-rc.50
+
+
+`ng g c task`
+
