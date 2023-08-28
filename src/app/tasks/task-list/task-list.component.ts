@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
-import {TaskList} from "@/app/model/TaskList";
-import {Task, TaskState} from "@/app/model/Task";
+import {CRUDTaskListService} from "@/app/c-r-u-d-task-list.service";
 
 @Component({
   selector: 'app-task-list',
@@ -8,10 +7,10 @@ import {Task, TaskState} from "@/app/model/Task";
   styleUrls: ['./task-list.component.scss']
 })
 export class TaskListComponent {
-  taskList = new TaskList([
-    new Task( "Titre 1",  "Description 1",  TaskState.A_FAIRE, new Date()),
-    new Task( "Titre 2",  "Description 2",  TaskState.EN_COURS, new Date()),
-    new Task( "Titre 3",  "Description 3",  TaskState.TERMINE, new Date()),
-  ]);
+
+  constructor(private taskListService: CRUDTaskListService) {
+  }
+
+  taskList = this.taskListService.getTaskList();
 
 }

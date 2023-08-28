@@ -5,7 +5,7 @@ import {TaskListComponent} from "@/app/tasks/task-list/task-list.component";
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/tasks',
+    redirectTo: '/display',
     pathMatch: 'full'
   },
   {
