@@ -1,15 +1,21 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {TaskListComponent} from "@/app/task-list/task-list.component";
+import {TaskListComponent} from "@/app/tasks/task-list/task-list.component";
 
-const routes: Routes = [{
-  path: '',
-  redirectTo: '/tasks',
-  pathMatch: 'full'
-},{
-  path: 'tasks',
-  component: TaskListComponent
-},];
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/tasks',
+    pathMatch: 'full'
+  },
+  {
+    path: 'tasks',
+    component: TaskListComponent
+  },
+  {
+    path: 'display',
+    loadChildren: () => import('@/app/tasks/tasks.module').then(module => module.TasksModule)
+  }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
