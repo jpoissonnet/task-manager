@@ -13,12 +13,13 @@ const colorByState = {
 })
 export class ColorByStateDirective {
   @Input() appColorByState = TaskState.A_FAIRE;
-  constructor(private el: ElementRef) { }
+
+  constructor(private el: ElementRef) {
+  }
 
   ngOnInit() {
     this.el.nativeElement.style.color = colorByState[this.appColorByState];
   }
-
 
 
 }

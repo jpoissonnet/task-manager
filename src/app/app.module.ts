@@ -7,6 +7,7 @@ import { TaskComponent } from './task/task.component';
 import { MainTaskComponent } from './main-task/main-task.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { ColorByStateDirective } from './color-by-state.directive';
+import { DateToJMYPipe } from './date-to-jmy.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ColorByStateDirective } from './color-by-state.directive';
     TaskComponent,
     MainTaskComponent,
     TaskListComponent,
-    ColorByStateDirective
+    ColorByStateDirective,
+    DateToJMYPipe
   ],
   imports: [
     BrowserModule,

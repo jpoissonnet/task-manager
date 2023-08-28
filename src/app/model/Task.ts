@@ -8,6 +8,7 @@ export class Task {
   constructor(
     public titre: string,
     public description: string,
-    public etat: TaskState
+    public etat: TaskState,
+    public dateDebut : Date,
   ) {}
 }

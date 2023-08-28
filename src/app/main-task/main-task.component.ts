@@ -7,6 +7,6 @@ import {Task, TaskState} from "@/app/model/Task";
   styleUrls: ['./main-task.component.scss']
 })
 export class MainTaskComponent {
-  task = new Task("Main titre", "Main description", TaskState.EN_COURS);
+  task = new Task("Main titre", "Main description", TaskState.EN_COURS, new Date());
 
 }
