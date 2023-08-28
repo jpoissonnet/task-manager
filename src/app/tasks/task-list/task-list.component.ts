@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {CRUDTaskListService} from "@/app/c-r-u-d-task-list.service";
 import {ByStatusTaskService} from "@/app/by-status-task.service";
 import {TaskState} from "@/app/model/Task";
+import {TaskFacadeService} from "@/app/task-facade.service";
 
 @Component({
   selector: 'app-task-list',
@@ -11,10 +12,11 @@ import {TaskState} from "@/app/model/Task";
 export class TaskListComponent {
 
 
-  constructor(private taskListService: CRUDTaskListService, private byStatusTaskService: ByStatusTaskService) {
+  constructor(private facade: TaskFacadeService) {
   }
 
-  taskList = this.taskListService.getTaskList();
-  archivedTaskList = this.byStatusTaskService.getByStatus(TaskState.TERMINE);
+  taskList = this.facade.getTaskList();
+
+  archivedTaskList = this.facade.getArchivedTaskList();
 
 }
