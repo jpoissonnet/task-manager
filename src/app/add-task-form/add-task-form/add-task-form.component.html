@@ -1,0 +1,23 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>
+    Titre
+    <input type="text" formControlName="titre"  placeholder="titre">
+  </label>
+  <label>
+    Description
+    <input type="text" formControlName="description" placeholder="description">
+  </label>
+  <label>
+    Etat
+    <select formControlName="etat">
+      <option value="EN_COURS" [defaultSelected]="true">En cours</option>
+      <option value="A_FAIRE">A faire</option>
+      <option value="TERMINE">Terminé</option>
+    </select>
+  </label>
+  <label>
+    Date début
+    <input type="date" formControlName="dateDebut" placeholder="dateDebut">
+  </label>
+  <button type="submit">Submit</button>
+</form>

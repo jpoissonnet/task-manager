@@ -5,8 +5,11 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 export class DateToJMYPipe implements PipeTransform {
 
-  transform(value: Date, ...args: unknown[]): string {
-    return `${value.getDate()}-${value.getMonth() + 1}-${value.getFullYear()}`
+  transform(value: unknown, ...args: unknown[]): string {
+    if (value instanceof Date) {
+      return `${value.getDate()}-${value.getMonth() + 1}-${value.getFullYear()}`
+    }
+    return 'Not a date :' + value;
   }
 
 }
