@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {DeleteTaskFormComponent} from './delete-task-form/delete-task-form.component';
 import {MainDeleteTaskFormComponent} from './main-delete-task-form/main-delete-task-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {SharedModule} from "@/app/shared/shared.module";
 
 
 @NgModule({
