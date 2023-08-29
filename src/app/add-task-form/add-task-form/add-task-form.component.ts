@@ -13,14 +13,13 @@ export class AddTaskFormComponent {
   }
 
   form = this.fb.group({
-    titre: ['', Validators.required],
-    description: ['', Validators.required],
-    etat: ['EN_COURS', Validators.required],
-    dateDebut: ['2018-07-22', Validators.required],
+    titre: ['', [Validators.required, Validators.minLength(2)]],
+    description: ['', [Validators.required, Validators.minLength(2)]],
+    etat: ['EN_COURS', [Validators.required]],
+    dateDebut: ['2018-07-22', [Validators.required]],
   });
 
   onSubmit() {
-    console.log("this.form.value", this.form.value)
     this.submitEvent.emit(this.form.value);
   }
 

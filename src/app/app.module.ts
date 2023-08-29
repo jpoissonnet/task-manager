@@ -11,6 +11,8 @@ import { DateToJMYPipe } from './date-to-jmy.pipe';
 import { AddTaskFormComponent } from './add-task-form/add-task-form/add-task-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { MainAddTaskFormComponent } from './add-task-form/main-add-task-form/main-add-task-form.component';
+import {CommonModule} from "@angular/common";
+import {AddTaskFormModule} from "@/app/add-task-form/add-task-form.module";
 
 @NgModule({
   declarations: [
@@ -24,9 +26,11 @@ import { MainAddTaskFormComponent } from './add-task-form/main-add-task-form/mai
     MainAddTaskFormComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AddTaskFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]

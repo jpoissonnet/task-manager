@@ -1,15 +1,27 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <label>
     Titre
-    <input type="text" formControlName="titre"  placeholder="titre">
+    <input type="text" formControlName="titre" id="titre" placeholder="titre">
+    <app-error-min-length-field-form
+      [isDisplayed]=" !!form.get('titre')?.errors?.['minlength']"></app-error-min-length-field-form>
+    <app-error-max-length-field-form
+      [isDisplayed]=" !!form.get('titre')?.errors?.['maxlength']"></app-error-max-length-field-form>
+    <app-error-max-length-field-form
+      [isDisplayed]=" !!form.get('titre')?.errors?.['maxlength']"></app-error-max-length-field-form>
   </label>
   <label>
     Description
-    <input type="text" formControlName="description" placeholder="description">
+    <input type="text" formControlName="description" id="description" placeholder="description">
+    <app-error-min-length-field-form
+      [isDisplayed]="!!form.get('description')?.invalid && !!form.get('description')?.errors?.['minlength']"></app-error-min-length-field-form>
+    <app-error-max-length-field-form
+      [isDisplayed]="!!form.get('description')?.invalid && !!form.get('description')?.errors?.['maxlength']"></app-error-max-length-field-form>
+    <app-error-max-length-field-form
+      [isDisplayed]="!!form.get('titre')?.errors?.['maxlength']"></app-error-max-length-field-form>
   </label>
   <label>
     Etat
-    <select formControlName="etat">
+    <select formControlName="etat" id="etat">
       <option value="EN_COURS" [defaultSelected]="true">En cours</option>
       <option value="A_FAIRE">A faire</option>
       <option value="TERMINE">Terminé</option>
@@ -17,7 +29,7 @@
   </label>
   <label>
     Date début
-    <input type="date" formControlName="dateDebut" placeholder="dateDebut">
+    <input type="date" formControlName="dateDebut" id="dateDebut" placeholder="dateDebut">
   </label>
-  <button type="submit">Submit</button>
+  <button type="submit" [disabled]="!form.valid">Submit</button>
 </form>
