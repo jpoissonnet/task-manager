@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
-import {CRUDTaskListService} from "@/app/c-r-u-d-task-list.service";
-import {ByStatusTaskService} from "@/app/by-status-task.service";
+import {CRUDTaskListService} from "@/app/tasks/c-r-u-d-task-list.service";
+import {ByStatusTaskService} from "@/app/tasks/by-status-task.service";
 import {TaskState} from "@/app/model/Task";
-import {TaskFacadeService} from "@/app/task-facade.service";
+import {TaskFacadeService} from "@/app/tasks/task-facade.service";
 
 @Component({
   selector: 'app-task-list',

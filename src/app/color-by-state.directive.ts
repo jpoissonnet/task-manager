@@ -3,9 +3,9 @@ import {TaskState} from "@/app/model/Task";
 
 
 const colorByState = {
-  [TaskState.A_FAIRE]: 'red',
-  [TaskState.EN_COURS]: 'blue',
-  [TaskState.TERMINE]: 'green',
+  [TaskState.A_FAIRE]: '#bd341f',
+  [TaskState.EN_COURS]: '#3496f5',
+  [TaskState.TERMINE]: '#45b274',
 };
 
 @Directive({

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {ByStatusTaskService} from "@/app/by-status-task.service";
-import {CRUDTaskListService} from "@/app/c-r-u-d-task-list.service";
+import {ByStatusTaskService} from "@/app/tasks/by-status-task.service";
+import {CRUDTaskListService} from "@/app/tasks/c-r-u-d-task-list.service";
 import {TaskState} from "@/app/model/Task";
 
 @Injectable({

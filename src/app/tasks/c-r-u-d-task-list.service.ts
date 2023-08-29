@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
 import {TaskList} from "@/app/model/TaskList";
 import {Task, TaskState} from "@/app/model/Task";
+import {CRUDTask} from "@/app/tasks/crudtask";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CRUDTaskListService {
+export class CRUDTaskListService implements CRUDTask {
 
   constructor() {
   }
@@ -18,6 +19,21 @@ export class CRUDTaskListService {
     ]);
 
   getTaskList(): TaskList {
+    return this.taskList;
+  }
+
+  createTask(newTask: Task) {
+    this.taskList.tasks.push(newTask);
+  }
+
+  deleteTask(task: Task) {
+    this.taskList.tasks.filter(inPlace => inPlace !== task);
+    return task;
+  }
+
+  updateTask(task: Task) {
+    this.taskList.tasks.filter(inPlace => inPlace === task);
+    this.taskList.tasks.push(task);
     return this.taskList;
   }
 }
