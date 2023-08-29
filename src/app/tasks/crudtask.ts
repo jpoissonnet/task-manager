@@ -1,14 +1,13 @@
 import {Task} from "@/app/model/Task";
 import {TaskList} from "@/app/model/TaskList";
+import {Observable} from "rxjs";
 
 export interface CRUDTask {
 
   createTask(newTask: Task): void
 
-  getTaskList(): TaskList
+  getTaskList(): Observable<TaskList>
 
-  updateTask(task: Task): TaskList
-
-  deleteTask(task:Task): Task
+  deleteTask(task:Task): void
 
 }

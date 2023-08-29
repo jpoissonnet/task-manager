@@ -57,6 +57,4 @@ Les fichiers dans le `dist` sont minifiés et bundlés.
 - compodoc: 1.1.21
 - yarn: 4.0.0-rc.50
 
-`ng g c task`
-
 

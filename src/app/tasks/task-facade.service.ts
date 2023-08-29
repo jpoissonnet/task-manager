@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {ByStatusTaskService} from "@/app/tasks/by-status-task.service";
 import {CRUDTaskListService} from "@/app/tasks/c-r-u-d-task-list.service";
 import {TaskState} from "@/app/model/Task";
@@ -12,13 +12,14 @@ export class TaskFacadeService {
   }
 
   taskList = this.taskListService.getTaskList();
+
   archivedTaskList = this.byStatusTaskService.getByStatus(TaskState.TERMINE);
 
   getTaskList() {
     return this.taskList;
   }
 
-getArchivedTaskList() {
+  getArchivedTaskList() {
     return this.archivedTaskList;
   }
 
