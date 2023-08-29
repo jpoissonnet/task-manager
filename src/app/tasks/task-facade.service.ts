@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {ByStatusTaskService} from "@/app/tasks/by-status-task.service";
 import {CRUDTaskListService} from "@/app/tasks/c-r-u-d-task-list.service";
 import {TaskState} from "@/app/model/Task";
 
@@ -8,23 +7,21 @@ import {TaskState} from "@/app/model/Task";
 })
 export class TaskFacadeService {
 
-  constructor(private taskListService: CRUDTaskListService, private byStatusTaskService: ByStatusTaskService) {
+  constructor(private taskListService: CRUDTaskListService) {
   }
 
   taskList = this.taskListService.getTaskList();
-
-  archivedTaskList = this.byStatusTaskService.getByStatus(TaskState.TERMINE);
 
   getTaskList() {
     return this.taskList;
   }
 
-  getArchivedTaskList() {
-    return this.archivedTaskList;
-  }
-
   deleteTask(title: string) {
     this.taskListService.deleteTask(title);
+  }
+
+  getByStatus(status: TaskState) {
+    return this.taskListService.getByStatus(status);
   }
 
 }

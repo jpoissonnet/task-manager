@@ -1,7 +1,6 @@
-import {TaskState, Task} from "@/app/model/Task";
-import {Observable} from "rxjs";
+import {TaskState} from "@/app/model/Task";
 
 export interface ByStatus {
-  getByStatus(status: TaskState): Observable<Task[]>;
+  getByStatus(status: TaskState): any;
 
 }
