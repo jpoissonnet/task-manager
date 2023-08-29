@@ -23,4 +23,8 @@ export class TaskFacadeService {
     return this.archivedTaskList;
   }
 
+  deleteTask(title: string) {
+    this.taskListService.deleteTask(title);
+  }
+
 }

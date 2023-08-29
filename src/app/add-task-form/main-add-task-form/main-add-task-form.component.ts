@@ -18,8 +18,6 @@ export class MainAddTaskFormComponent {
         etat: TaskState[$event.etat as unknown as keyof typeof TaskState],
         dateDebut: new Date($event.dateDebut)
       });
-    console.log($event)
-
   }
 
 }

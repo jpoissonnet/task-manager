@@ -8,6 +8,6 @@ export interface CRUDTask {
 
   getTaskList(): Observable<TaskList>
 
-  deleteTask(task:Task): void
+  deleteTask(title:string): void
 
 }

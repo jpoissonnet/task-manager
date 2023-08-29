@@ -13,6 +13,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { MainAddTaskFormComponent } from './add-task-form/main-add-task-form/main-add-task-form.component';
 import {CommonModule} from "@angular/common";
 import {AddTaskFormModule} from "@/app/add-task-form/add-task-form.module";
+import {DeleteTaskFormModule} from "@/app/delete-task-form/delete-task-form.module";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {AddTaskFormModule} from "@/app/add-task-form/add-task-form.module";
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    AddTaskFormModule
+    AddTaskFormModule,
+    DeleteTaskFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]

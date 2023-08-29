@@ -26,9 +26,10 @@ export class CRUDTaskListService implements CRUDTask {
     this.taskList.subscribe(taskList => taskList.tasks.push(newTask));
   }
 
-  deleteTask(task: Task) {
-    this.taskList.subscribe(taskList => taskList.tasks.filter(inPlace => inPlace !== task));
-    return task;
+  deleteTask(title: string) {
+    this.taskList.subscribe(taskList => taskList.tasks = taskList.tasks.filter(task => {
+      return task.titre !== title;
+    }));
   }
 
 }

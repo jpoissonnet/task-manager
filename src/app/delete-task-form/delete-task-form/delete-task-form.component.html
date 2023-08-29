@@ -1,0 +1,10 @@
+<h2>Le retirage d'une tache</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>
+    Tâche à retirer
+    <select formControlName="title" id="title">
+      <option *ngFor="let task of tasks.tasks" [value]="task.titre">{{task.titre}}</option>
+    </select>
+  </label>
+  <button type="submit">Submit</button>
+</form>
