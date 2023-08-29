@@ -3,21 +3,19 @@
     Titre
     <input type="text" formControlName="titre" id="titre" placeholder="titre">
     <app-error-min-length-field-form
-      [isDisplayed]=" !!form.get('titre')?.errors?.['minlength']"></app-error-min-length-field-form>
+      [isDisplayed]="!!form.get('titre')?.errors?.['minlength']"></app-error-min-length-field-form>
     <app-error-max-length-field-form
-      [isDisplayed]=" !!form.get('titre')?.errors?.['maxlength']"></app-error-max-length-field-form>
-    <app-error-max-length-field-form
-      [isDisplayed]=" !!form.get('titre')?.errors?.['maxlength']"></app-error-max-length-field-form>
+      [isDisplayed]="!(!!form.valid) && !!form.get('titre')?.errors?.['maxlength']"></app-error-max-length-field-form>
+    <app-error-required-field-form
+      [isDisplayed]="!(!!form.valid) && !!form.get('titre')?.errors?.['required']"></app-error-required-field-form>
   </label>
   <label>
     Description
     <input type="text" formControlName="description" id="description" placeholder="description">
     <app-error-min-length-field-form
-      [isDisplayed]="!!form.get('description')?.invalid && !!form.get('description')?.errors?.['minlength']"></app-error-min-length-field-form>
+      [isDisplayed]="!!form.get('description')?.errors?.['minlength']"></app-error-min-length-field-form>
     <app-error-max-length-field-form
-      [isDisplayed]="!!form.get('description')?.invalid && !!form.get('description')?.errors?.['maxlength']"></app-error-max-length-field-form>
-    <app-error-max-length-field-form
-      [isDisplayed]="!!form.get('titre')?.errors?.['maxlength']"></app-error-max-length-field-form>
+      [isDisplayed]="!!form.get('description')?.errors?.['maxlength']"></app-error-max-length-field-form>
   </label>
   <label>
     Etat
